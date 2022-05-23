@@ -10,7 +10,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 import xyz.shodown.boot.upms.constants.UpmsConstants;
-import xyz.shodown.boot.upms.model.SecurityUser;
 
 import java.util.Collection;
 

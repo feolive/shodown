@@ -9,7 +9,6 @@ import xyz.shodown.boot.upms.config.AdditionalProperties;
 import xyz.shodown.boot.upms.constants.UpmsConstants;
 import xyz.shodown.boot.upms.entity.ShodownPermission;
 import xyz.shodown.boot.upms.entity.ShodownRole;
-import xyz.shodown.boot.upms.model.SecurityUser;
 import xyz.shodown.boot.upms.repository.ShodownPermissionRepository;
 import xyz.shodown.boot.upms.util.ShodownUpmsUtil;
 import xyz.shodown.common.util.basic.ListUtil;

@@ -15,7 +15,6 @@
         <spring.security.version>2.2.5.RELEASE</spring.security.version>
         <spring.data.jpa>2.6.6</spring.data.jpa>
         <postgresql.driver>42.3.3</postgresql.driver>
-        <mysql.driver>8.0.23</mysql.driver>
         <oracle.driver>21.1.0.0</oracle.driver>
     </properties>
 
