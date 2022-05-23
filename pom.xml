@@ -34,8 +34,8 @@
     </developers>
 
     <scm>
-        <url>https://gitee.com/feolive/shodown</url>
-        <connection>https://gitee.com/feolive/shodown.git</connection>
+        <url>https://github.com/feolive/shodown</url>
+        <connection>git@github.com:feolive/shodown.git</connection>
     </scm>
 
     <properties>
