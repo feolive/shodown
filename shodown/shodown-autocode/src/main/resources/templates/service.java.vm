@@ -1,0 +1,42 @@
+package ${package.Service};
+
+import ${package.Entity}.${entity};
+import ${superServiceClassPackage};
+
+
+/**
+ * @author ${author}
+ * @since ${date}
+ * @version ${version}
+ */
+#if(${kotlin})
+interface ${table.serviceName} : ${superServiceClass}<${entity}>
+#else
+public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
+
+        PageInfo<${entity}> list(PageParam<${entity}> pageDto);
+        /**
+        * 根据Id逻辑删除
+        */
+        Boolean logicalDelById(${entity} ${table.entityPath});
+
+        /**
+        * 根据id逻辑批量删除
+        */
+        Boolean logicalBatchDelById(List<${entity}> ${table.entityPath}List);
+
+
+        /**
+         * 不分页查询
+         * @param ${table.entityPath}
+         * @return
+         */
+        List<${entity}> getAll(${entity} ${table.entityPath});
+
+        /**
+         *  更新状态
+         * @param ${table.entityPath}
+         */
+        Boolean updateState(${table.entityName} ${table.entityPath});
+        }
+#end

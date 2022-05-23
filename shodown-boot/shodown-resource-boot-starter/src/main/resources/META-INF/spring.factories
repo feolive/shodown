@@ -1,0 +1,2 @@
+# ×°Åä
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=xyz.shodown.boot.resource.config.OSSAutoConfiguration

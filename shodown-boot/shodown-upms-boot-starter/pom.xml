@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>shodown-boot</artifactId>
+        <groupId>xyz.shodown</groupId>
+        <version>2.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>shodown-upms-boot-starter</artifactId>
+
+    <properties>
+        <spring.security.version>2.2.5.RELEASE</spring.security.version>
+        <spring.data.jpa>2.6.6</spring.data.jpa>
+        <postgresql.driver>42.3.3</postgresql.driver>
+        <mysql.driver>8.0.23</mysql.driver>
+        <oracle.driver>21.1.0.0</oracle.driver>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-security</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>xyz.shodown</groupId>
+            <artifactId>shodown-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xyz.shodown</groupId>
+            <artifactId>shodown-dynamicdb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xyz.shodown</groupId>
+            <artifactId>shodown-crypto</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xyz.shodown</groupId>
+            <artifactId>shodown-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xyz.shodown</groupId>
+            <artifactId>shodown-cache-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

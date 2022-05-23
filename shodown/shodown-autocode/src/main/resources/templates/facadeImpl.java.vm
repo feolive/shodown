@@ -1,0 +1,87 @@
+package ${cfg.packFacadeImpl};
+
+import ${package.Entity}.${entity};
+import ${package.Service}.${table.serviceName};
+import ${cfg.packFacade}.${facadeName};
+import org.springframework.stereotype.Component;
+import lombok.extern.slf4j.Slf4j;
+
+
+/**
+ * @author ${author}
+ * @since ${date}
+ * @version ${version}
+ */
+@Slf4j
+@Component
+#if(${kotlin})
+open class ${facadeImplName} :  ${facadeName} {
+
+        }
+#else
+public class ${facadeImplName} implements ${facadeName} {
+
+        @Resource
+        private ${table.serviceName} ${table.entityPath}Service;
+
+        @Override
+        public Result<PageInfo<${entity}>> list(PageParam<${entity}> pageDto) {
+            PageInfo<${entity}> data = ${table.entityPath}Service.list(pageDto);
+            return Result.success(data);
+        }
+
+        @Override
+        public Result<List<${entity}>> getAll(${entity} ${table.entityPath}) {
+            List<${entity}> data = ${table.entityPath}Service.getAll(${table.entityPath});
+            return Result.success(data);
+        }
+
+        /**
+        * 根据Id逻辑删除,只能删除自己创建的
+        */
+        @Override
+        public Result<?> logicalDelById(${entity} ${table.entityPath}){
+            ${table.entityPath}Service.logicalDelById(${table.entityPath});
+            return Result.success();
+        }
+
+
+        /**
+        * 根据id逻辑批量删除
+        */
+        @Override
+        public Result<?> logicalBatchDelById(List<${entity}> ${table.entityPath}List){
+            ${table.entityPath}Service.logicalBatchDelById(${table.entityPath}List);
+            return Result.success();
+        }
+
+
+
+        /**
+         *  更新状态
+         * @param ${table.entityPath}
+         */
+        @Override
+        public Result<?> updateState(${table.entityName} ${table.entityPath}){
+            ${table.entityPath}Service.updateState(${table.entityPath});
+            return Result.success();
+        }
+
+        @Override
+        public Result<?> save(${table.entityName} ${table.entityPath}){
+            ${table.entityPath}Service.save(${table.entityPath});
+            return Result.success();
+        }
+
+        @Override
+        public Result<?> update(${entity} ${table.entityPath}){
+            ${table.entityPath}Service.updateById(${table.entityPath});
+            return Result.success();
+        }
+
+        @Override
+        public Result<${entity}> getById(Serializable id){
+            return Result.success(${table.entityPath}Service.getById(id));
+        }
+}
+#end

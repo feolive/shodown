@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>shodown</artifactId>
+        <groupId>xyz.shodown</groupId>
+        <version>2.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>shodown-all</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>xyz.shodown</groupId>
+            <artifactId>shodown-crypto</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xyz.shodown</groupId>
+            <artifactId>shodown-autocode</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xyz.shodown</groupId>
+            <artifactId>shodown-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xyz.shodown</groupId>
+            <artifactId>shodown-dynamicdb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xyz.shodown</groupId>
+            <artifactId>shodown-grpc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xyz.shodown</groupId>
+            <artifactId>shodown-jpa</artifactId>
+        </dependency>
+    </dependencies>
+</project>

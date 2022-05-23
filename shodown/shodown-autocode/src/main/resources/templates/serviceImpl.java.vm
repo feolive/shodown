@@ -1,0 +1,73 @@
+package ${package.ServiceImpl};
+
+import ${package.Entity}.${entity};
+import ${package.Mapper}.${table.mapperName};
+import ${package.Service}.${table.serviceName};
+import ${superServiceImplClassPackage};
+
+import org.springframework.stereotype.Service;
+import lombok.extern.slf4j.Slf4j;
+
+
+/**
+ * @author ${author}
+ * @since ${date}
+ * @version ${version}
+ */
+@Slf4j
+@Service
+#if(${kotlin})
+open class ${table.serviceImplName} : ${superServiceImplClass}<${table.mapperName}, ${entity}>(), ${table.serviceName} {
+
+        }
+#else
+public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
+
+        @Resource
+        private ${table.mapperName} ${table.entityPath}Mapper;
+
+        @Override
+        public PageInfo<${entity}> list(PageParam<${entity}> pageDto) {
+
+            QueryWrapper<${entity}> queryWrapper = new QueryWrapper<>();
+            // TODO: 传入条件,使用pageDto.getCondition()获取
+            PageHelper.startPage(pageDto.getPageNum(),pageDto.getPageSize());
+            List<${entity}> list = ${table.entityPath}Mapper.selectList(queryWrapper);
+            return new PageInfo<>(list);
+        }
+
+        @Override
+        public List<${entity}> getAll(${entity} ${table.entityPath}) {
+            return ${table.entityPath}Mapper.selectList(new QueryWrapper<>());
+        }
+
+        /**
+        * 根据Id逻辑删除,只能删除自己创建的
+        */
+        @Override
+        public Boolean logicalDelById(${entity} ${table.entityPath}){
+            // TODO: 根据实际场景,变更状态字段为无效状态
+            return this.updateById(${table.entityPath});
+        }
+
+
+        /**
+        * 根据id逻辑批量删除
+        */
+        @Override
+        public Boolean logicalBatchDelById(List<${entity}> ${table.entityPath}List){
+            // TODO: 根据实际场景,变更状态字段为无效状态
+            return this.updateBatchById(${table.entityPath}List);
+        }
+
+
+        /**
+         *  更新状态
+         * @param ${table.entityPath}
+         */
+        @Override
+        public Boolean updateState(${table.entityName} ${table.entityPath}){
+            return this.updateById(${table.entityPath});
+        }
+}
+#end

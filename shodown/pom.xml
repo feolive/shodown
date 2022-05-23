@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>xyz.shodown</groupId>
+        <artifactId>shodown-parent</artifactId>
+        <version>2.0.0</version>
+    </parent>
+
+    <artifactId>shodown</artifactId>
+    <packaging>pom</packaging>
+    <description>shodown基础依赖包父pom</description>
+
+    <modules>
+        <module>shodown-core</module>
+        <module>shodown-common</module>
+        <module>shodown-crypto</module>
+        <module>shodown-autocode</module>
+        <module>shodown-flow</module>
+        <module>shodown-flow-autoconfig</module>
+        <module>shodown-grpc</module>
+        <module>shodown-jpa</module>
+        <module>shodown-dynamicdb</module>
+        <module>shodown-all</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mysql.version>5.1.40</mysql.version>
+        <mybatis.spring.boot.version>2.1.3</mybatis.spring.boot.version>
+        <pagehelper.version>1.2.12</pagehelper.version>
+        <mybatis-plus.version>3.2.0</mybatis-plus.version>
+        <velocity.version>2.2</velocity.version>
+        <swagger2.version>2.9.2</swagger2.version>
+        <druid-starter>1.1.22</druid-starter>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--   DATABASE   -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-starter}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

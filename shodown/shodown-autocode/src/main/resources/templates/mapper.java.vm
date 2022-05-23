@@ -1,0 +1,22 @@
+package ${package.Mapper};
+
+import ${package.Entity}.${entity};
+import ${superMapperClassPackage};
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+/**
+ * @author ${author}
+ * @since ${date}
+ * @version ${version}
+ */
+@Mapper
+#if(${kotlin})
+interface ${table.mapperName} : ${superMapperClass}<${entity}>
+#else
+public interface ${table.mapperName} extends ${superMapperClass}<${entity}> {
+        //通过id物理删除
+        int delById(@Param("id") Long id);
+}
+#end
